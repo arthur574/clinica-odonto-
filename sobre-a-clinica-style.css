@@ -1,0 +1,48 @@
+.topo {
+    text-align: center;
+    
+}
+
+.topo h1{
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 5px #aaaa;
+    color: rgb(0, 188, 188); /* Define a cor do título */
+    text-transform: uppercase;
+
+}
+
+.topo img{
+    margin-bottom: 15px;
+}
+
+.topo p{
+    text-shadow: 4px 4px 5px #aaaa;
+    color: rgb(91, 88, 88);
+    font-size: 20px;
+}
+
+.lista{
+    display: flex;
+    position: relative;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.lista li{
+    position: relative;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-right: 150px;
+    text-shadow: 4px 6px 4px #aaaa;
+    color: rgb(95, 92, 92);
+    font-size: 20px;
+
+}
+
+
+.lista iframe{
+    position: relative;
+    margin-left: 150px;
+    box-shadow: 4px 4px 12px #aaaa;
+    width: 2000px;
+}

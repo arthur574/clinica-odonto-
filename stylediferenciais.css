@@ -1,0 +1,382 @@
+/* Estilos gerais */
+* {
+    padding: 0; /* Remove o espaço interno de todos os elementos */
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura total */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+body {
+    padding: 0; /* Remove o espaço interno */
+    margin: 0; /* Remove a margem padrão */
+    background-image: url(img/bk2.jpg); /* Define uma imagem de fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-color: #cccccc; /* Cor de fundo que será visível se a imagem não cobrir */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+}
+
+/* Estilo do cabeçalho */
+header {
+    text-align: center; /* Centraliza o texto */
+    padding: 30px; /* Adiciona espaço interno ao cabeçalho */
+    color: rgb(0, 188, 188); /* Define a cor do texto */
+    background-color: transparent; /* Mantém o fundo transparente */
+    font-family: 'Times New Roman', Times, serif; /* Define a fonte usada no cabeçalho */
+    display: flex; /* Permite movimentar tudo que está dentro do cabeçalho */
+    flex-direction: row; /* Define a direção dos itens como linha */
+    justify-content: center; /* Centraliza os itens no cabeçalho */
+}
+
+.titulodiferencial{
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: rgb(0, 188, 188);
+    
+}
+
+.titulodiferencial h1{
+    line-height: 150%;
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-transform: uppercase; /* Transforma o texto para letras maiúsculas */
+    text-shadow: 4px 4px 5px #aaaa;
+    color: rgb(0, 188, 188); /* Cor do ícone */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+header ul {
+    align-items: center; /* Alinha os itens ao centro */
+    padding: 10px; /* Adiciona espaço ao redor da lista */
+    display: flex; /* Utiliza flexbox para layout horizontal */
+    gap: 20px; /* Espaçamento entre os itens da lista */
+    text-align: right; /* Alinha o texto à direita */
+    
+}
+
+ul li a {
+    color: rgb(0, 188, 188); /* Define a cor dos links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-size: larger; /* Aumenta o tamanho da fonte */
+    transition: .3s; /* Adiciona uma transição suave */
+    display: block; /* Faz os links ocuparem toda a largura disponível */
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+/* Animação de hover */
+ul:hover li a {
+    opacity: 0.3; /* Reduz a opacidade dos links ao passar o mouse */
+}
+
+ul li a:hover {
+    opacity: 1; /* Restaura a opacidade ao passar o mouse */
+    transform: scale(1.2); /* Aumenta o tamanho do link ao passar o mouse */
+}
+
+ul li a::before {
+    content: ""; /* Cria um pseudo-elemento */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    width: 100%; /* Largura total do pseudo-elemento */
+    height: 100%; /* Altura total do pseudo-elemento */
+}
+
+/* Estilos do container */
+.container {
+    width: 100%; /* Largura total do container */
+    min-height: 100vh; /* Altura mínima do container */
+    display: flex; /* Utiliza flexbox para layout */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    margin-top: -160px; /* Move o container para cima */
+}
+
+/* Estilos das boxes */
+.box {
+    width: 300px; /* Largura da box */
+    height: 300px; /* Altura da box */
+    border: 1px solid #505050; /* Borda da box */
+    border-radius: 20px; /* Cantos arredondados */
+    padding: 20px; /* Espaço interno */
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+    overflow: hidden; /* Garante que o conteúdo não saia da box */
+    margin: 0 10px; /* Reduz o espaço entre as boxes */
+}
+
+.box h2 {
+    text-transform: uppercase; /* Transforma o texto para letras maiúsculas */
+    color:  rgb(90, 87, 87);
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+    z-index: 2; /* Coloca o título acima de outros elementos */
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+.box i.fa {
+    color: rgb(0, 188, 188); /* Cor do ícone */
+    position: absolute; /* Posiciona o ícone de forma absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para ficar centrado */
+    font-size: 10rem; /* Tamanho inicial do ícone */
+    transition: font-size 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transições suaves */
+}
+
+.box:hover i.fa {
+    font-size: 3rem; /* Reduz o tamanho do ícone ao passar o mouse */
+    transform: translate(95px, -140px); /* Move o ícone para nova posição ao passar o mouse */
+}
+
+.box .content {
+    width: 100%; /* Largura total do conteúdo */
+    height: 100%; /* Altura total do conteúdo */
+    position: absolute; /* Posiciona o conteúdo de forma absoluta */
+    z-index: 1; /* Coloca o conteúdo abaixo do título */
+    top: 0; /* Posiciona o conteúdo no topo */
+    left: -100%; /* Começa fora da tela à esquerda */
+    transition: .5s ease-in-out; /* Transição suave */
+    padding: 70px 20px; /* Espaço interno */
+}
+
+.box .content::after {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    width: 50%; /* Largura do pseudo-elemento */
+    height: 100%; /* Altura total do pseudo-elemento */
+    background: #98CDE3; /* Cor de fundo do pseudo-elemento */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do conteúdo */
+}
+
+.box:hover .content {
+    transform: translateX(100%); /* Move o conteúdo para a direita ao passar o mouse */
+}
+
+.box .content p {
+    color: rgb(112, 109, 109); /* Cor do texto no conteúdo */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+/* Estilos das boxes */
+.boxx {
+    width: 300px; /* Largura da box */
+    height: 300px; /* Altura da box */
+    border: 1px solid #505050; /* Borda da box */
+    border-radius: 20px; /* Cantos arredondados */
+    padding: 10px; /* Espaço interno */
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+    overflow: hidden; /* Garante que o conteúdo não saia da box */
+    margin: 0 10px; /* Reduz o espaço entre as boxes */
+    top: -180px;
+}
+
+.boxx h2 {
+    text-transform: uppercase; /* Transforma o texto para letras maiúsculas */
+    color:  rgb(90, 87, 87);
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+    z-index: 2; /* Coloca o título acima de outros elementos */
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+.boxx i.fa {
+    color: rgb(0, 188, 188); /* Cor do ícone */
+    position: absolute; /* Posiciona o ícone de forma absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para ficar centrado */
+    font-size: 10rem; /* Tamanho inicial do ícone */
+    transition: font-size 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transições suaves */
+}
+
+.boxx:hover i.fa {
+    font-size: 3rem; /* Reduz o tamanho do ícone ao passar o mouse */
+    transform: translate(88px, -140px); /* Move o ícone para nova posição ao passar o mouse */
+}
+
+.boxx .content {
+    width: 100%; /* Largura total do conteúdo */
+    height: 100%; /* Altura total do conteúdo */
+    position: absolute; /* Posiciona o conteúdo de forma absoluta */
+    z-index: 1; /* Coloca o conteúdo abaixo do título */
+    top: 0; /* Posiciona o conteúdo no topo */
+    left: -100%; /* Começa fora da tela à esquerda */
+    transition: .5s ease-in-out; /* Transição suave */
+    padding: 70px 20px; /* Espaço interno */
+}
+
+.boxx .content::after {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    width: 50%; /* Largura do pseudo-elemento */
+    height: 100%; /* Altura total do pseudo-elemento */
+    background: #98CDE3; /* Cor de fundo do pseudo-elemento */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do conteúdo */
+}
+
+.boxx:hover .content {
+    transform: translateX(100%); /* Move o conteúdo para a direita ao passar o mouse */
+}
+
+.boxx .content p {
+    color: rgb(112, 109, 109); /* Cor do texto no conteúdo */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Estilos da seção cer */
+.cer {
+    display: flex; /* Utiliza flexbox para layout */
+    align-items: center; /* Alinha os itens ao centro */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 100px; /* Margem inferior */
+    margin-top: -100px; /* Margem superior negativa */
+    text-shadow: 4px 4px 5px #aaaa;
+}
+.cer2 {
+    display: flex; /* Utiliza flexbox para layout */
+    align-items: center; /* Alinha os itens ao centro */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 100px; /* Margem inferior */
+    margin-top: 100px; /* Margem superior negativa */
+    font-size: 25px;
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+.cer2 img {
+    width: 70px; /* Largura da imagem */
+    padding-right: 20px; /* Espaço à direita da imagem */
+}
+.cer img {
+    width: 70px; /* Largura da imagem */
+    padding-right: 20px; /* Espaço à direita da imagem */
+}
+
+/* Estilos da faixa */
+.faixa {
+    background: #98CDE3; /* Cor de fundo da faixa */
+    width: 100%; /* Largura total da faixa */
+    height: 150px; /* Altura da faixa */
+    display: flex; /* Utiliza flexbox para layout */
+    align-items: center; /* Alinha os itens ao centro */
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+.faixa p.pp {
+    font-size: 30px; /* Tamanho da fonte */
+    position: relative; /* Permite posicionamento relativo */
+    left: 100px; /* Move para a direita */
+}
+
+.faixa p.ligue {
+    position: relative; /* Permite posicionamento relativo */
+    left: 320px; /* Move para a direita */
+    top: -40px; /* Move para cima */
+    font-size: 30px; /* Tamanho da fonte */
+}
+
+/* Estilos de contato */
+.contato {
+    position: relative; /* Permite posicionamento relativo */
+    font-size: 30px; /* Tamanho da fonte */
+    left: 150px; /* Move para a direita */
+    top: 20px; /* Move para baixo */
+    line-height: 60px; /* Altura da linha para espaçamento */
+    display: flex; /* Utiliza flexbox para layout */
+    border: #000000 dotted 5px; /* Borda pontilhada */
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+.contato .fas {
+    color: #235520; /* Cor do ícone na seção de contato */
+}
+
+.faixa button {
+    position: relative; /* Permite posicionamento relativo */
+    width: 200px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    border-radius: 20px; /* Cantos arredondados */
+    background: #42AF3C; /* Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto no botão */
+    left: 130px; /* Move para a direita */
+}
+
+.titlle{
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #98CDE3;
+    font-family: Georgia, serif;    
+    text-shadow: 4px 4px 5px #aaaa;
+}
+
+/* Estilos dos cards */
+.card-container {
+    display: flex; /* Ativa o flexbox */
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha se necessário */
+    gap: 16px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards */
+    max-width: 960px; /* Largura máxima do contêiner */
+    margin: auto; /* Centraliza o contêiner na página */
+}
+
+.card {
+    background-color: white; /* Cor de fundo do card */
+    flex: 0 1 calc(33.33% - 16px); /* Cada card ocupa 1/3 da largura do contêiner, menos o gap */
+    max-width: 180px; /* Largura máxima do card */
+    height: auto; /* Altura automática */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 4px 4px 12px #aaaa; /* Sombra do card */
+    overflow: hidden; /* Garante que o conteúdo não saia do card */
+    transition: box-shadow 0.3s, transform 0.3s; /* Transições suaves para sombra e transformação */
+}
+
+.card:hover {
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    transform: translateY(-2px); /* Move o card para cima ao passar o mouse */
+}
+
+.card div {
+    display: flex; /* Utiliza flexbox para layout */
+    flex-direction: column; /* Organiza itens em coluna */
+    justify-content: center; /* Centraliza itens verticalmente */
+    align-items: center; /* Centraliza itens horizontalmente */
+    gap: 4px; /* Espaçamento entre itens */
+    padding: 0; /* Remove padding para a div principal */
+}
+
+.card-image {
+    width: 100%; /* Ocupa toda a largura do card */
+    height: 150px; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+}
+
+.card h1 {
+    font-size: 1.2rem; /* Tamanho do título */
+    color: #827d7d; /* Cor do texto do título */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 0.9rem; /* Tamanho do subtítulo */
+    color: #777070; /* Cor do texto do subtítulo */
+    margin: 0; /* Remove a margem padrão */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 800px) {
+    .card {
+        flex: 0 1 calc(50% - 16px); /* 2 cards por linha em telas médias */
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 0 1 100%; /* 1 card por linha em telas pequenas */
+    }
+}
